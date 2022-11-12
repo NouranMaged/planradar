@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
 
-interface Props {
+export interface Props {
   show: boolean;
   onHide: () => void;
-  handleSubmit: () => void;
+  handleSubmit: (data: {}) => void;
   ticketData: {
     subject: string;
-    priotity: string;
+    priority: string;
     status: string;
     description: string;
     id: string;
@@ -18,22 +18,26 @@ const EditTicketModal: React.FC<Props> = (props) => {
   var ticketData = props.ticketData;
   const [data, setData] = useState({
     subject: "",
-    priotity: "",
+    priority: "",
     status: "",
     description: "",
     id: "",
   });
+  //List of Input fields
+  const formInputs = ["subject", "priority", "status", "description"];
+
+  //Once Edit Modal us opened the selected Ticket data is passed to the inputs data state
   useEffect(() => {
     setData({
       subject: ticketData.subject,
-      priotity: ticketData.priotity,
+      priority: ticketData.priority,
       status: ticketData.status,
       description: ticketData.description,
       id: ticketData.id,
     });
   }, [ticketData]);
-  const formInputs = ["subject", "priotity", "status", "description"];
 
+  //This Function handle any change done to inputs and save them in Data state according to their name and value
   const handleChange = (event: { target: { name: string; value: string } }) => {
     var { name, value } = event.target;
     data[name] = value;
@@ -49,7 +53,7 @@ const EditTicketModal: React.FC<Props> = (props) => {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Edit Ticket
+          Edit Ticket of ID:{data.id}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>

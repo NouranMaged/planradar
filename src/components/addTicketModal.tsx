@@ -1,22 +1,25 @@
 import React, { useState } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
 
-interface Props {
-  show: boolean;
-  onHide: () => void;
-  handleSubmit: () => void;
+export interface Props {
+  handleSubmit: (data: any) => void;
 }
 
-const EditTicketModal: React.FC<Props> = (props) => {
+const AddTicketModal: React.FC<Props> = (props) => {
+  const { handleSubmit } = props;
+  //Empty Input data state
   const [data, setData] = useState({
     subject: "",
-    priotity: "",
+    priority: "",
     status: "",
     description: "",
   });
-  const formInputs = ["subject", "priotity", "status", "description"];
 
-  const handleChange = (event) => {
+  //List of Input fields
+  const formInputs = ["subject", "priority", "status", "description"];
+
+  //This Function handle any change done to inputs and save them in Data state according to their name and value
+  const handleChange = (event: { target: { name: any; value: any } }) => {
     var { name, value } = event.target;
     data[name] = value;
     setData({ ...data });
@@ -52,7 +55,7 @@ const EditTicketModal: React.FC<Props> = (props) => {
           })}
 
           <Modal.Footer>
-            <Button onClick={() => props.handleSubmit(data)}>Submit</Button>
+            <Button onClick={() => handleSubmit(data)}>Submit</Button>
           </Modal.Footer>
         </Form>
       </Modal.Body>
@@ -60,4 +63,4 @@ const EditTicketModal: React.FC<Props> = (props) => {
   );
 };
 
-export default EditTicketModal;
+export default AddTicketModal;

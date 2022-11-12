@@ -1,9 +1,9 @@
 import React from "react";
-import PlanRadar from "./pages/planRadar.tsx";
+import MainPage from "./pages/mainPage.tsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const App: React.FC = () => {
-  return <PlanRadar />;
+  return <MainPage />;
 };
 
 export default App;
