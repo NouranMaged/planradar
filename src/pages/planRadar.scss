@@ -1,0 +1,54 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  margin: 60px 0px;
+}
+// .wrapper table {
+//   border-style: none;
+//   /*border-collapse: collapse;*/
+//   /*display: block;*/
+// }
+
+.table-content {
+  overflow-y: scroll;
+  border-collapse: collapse;
+  display: block;
+}
+
+// th {
+//   background-color: #333;
+//   color: #fcfcfc;
+// }
+
+// td {
+//   color: #333;
+// }
+
+// th,
+// td {
+//   text-align: center;
+//   font-size: 20px;
+//   font-weight: bold;
+//   text-transform: uppercase;
+//   font-family: sans-serif;
+//   width: 230px;
+// }
+
+// .tr {
+//   text-align: center;
+//   // height: 45px;
+//   // max-height: 45px;
+// }
+
+// .tr-odd {
+//   background-color: #dadde1;
+// }
+
+// .tr-even {
+//   background-color: #fcfcfc;
+// }
