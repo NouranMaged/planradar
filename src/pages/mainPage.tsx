@@ -4,6 +4,13 @@ import AddTicketModal from "../components/addTicketModal.tsx";
 import "../styles/planRadar.scss";
 import TicketsTable from "./ticketsTable.tsx";
 
+export interface data {
+  subject: string;
+  priority: string;
+  status: string;
+  description: string;
+  id: number;
+}
 const MainPage = () => {
   //set Array of 10000
   const [tickets, setTickets] = useState(
@@ -19,7 +26,7 @@ const MainPage = () => {
   const [modalShow, setModalShow] = useState(false);
 
   //Function fired when user add new ticket
-  const handleSubmit = (data) => {
+  const handleSubmit = (data: data) => {
     data["id"] = tickets.length + 1;
     tickets.unshift(data);
     setTickets(tickets);
@@ -27,7 +34,7 @@ const MainPage = () => {
   };
 
   //Function fired when user Edit exsiting ticket
-  const handleEditTicket = (data) => {
+  const handleEditTicket = (data: data) => {
     tickets.filter((item, i) => {
       if (item.id === data.id) {
         return (tickets[i] = data);

@@ -1,3 +1,4 @@
+/* eslint-disable no-loop-func */
 import React, { useState } from "react";
 import Table from "react-bootstrap/Table";
 import "../styles/planRadar.scss";
@@ -50,7 +51,7 @@ const TicketsTable: React.FC<Props> = (props) => {
         break;
       }
 
-      let tableRowStyle = {
+      let tableRowStyle: any = {
         position: "absolute",
         top: index * rowHeight,
         left: 0,
@@ -68,11 +69,10 @@ const TicketsTable: React.FC<Props> = (props) => {
               key={i}
               onClick={(e) => column === "id" && handleEdit(e)}
               value={allRows[index][column]}
-              name={allRows[index][column]}
-              className={column === "id" && "id-column"}
+              className={column === "id" ? "id-column" : undefined}
               data-toggle={column === "id" && "tooltip"}
               data-placement={column === "id" && "top"}
-              title={column === "id" && "Click Edit Ticket"}
+              title={column === "id" ? "Click Edit Ticket" : undefined}
             >
               {allRows[index][column]}
             </td>
@@ -100,10 +100,10 @@ const TicketsTable: React.FC<Props> = (props) => {
     props.handleEditTicket(data);
     setModalShow(false);
   };
-  const handleEdit = (e) => {
+  const handleEdit = (e: any) => {
     let index = e.target.attributes.value.value;
 
-    allRows.filter((i) => {
+    allRows.filter((i: any) => {
       i.id == index && setTicketData(i);
     });
     setModalShow(true);

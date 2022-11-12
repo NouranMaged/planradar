@@ -10,7 +10,7 @@ export interface Props {
     priority: string;
     status: string;
     description: string;
-    id: string;
+    id: number;
   };
 }
 
@@ -21,7 +21,7 @@ const EditTicketModal: React.FC<Props> = (props) => {
     priority: "",
     status: "",
     description: "",
-    id: "",
+    id: 0,
   });
   //List of Input fields
   const formInputs = ["subject", "priority", "status", "description"];
@@ -58,7 +58,7 @@ const EditTicketModal: React.FC<Props> = (props) => {
       </Modal.Header>
       <Modal.Body>
         <Form>
-          {Object.keys(ticketData).length !== 0 &&
+          {Object.keys(ticketData)?.length !== 0 &&
             formInputs.map((input, i) => {
               return (
                 <Form.Group className="mb-3" controlId="formBasicInput" key={i}>
