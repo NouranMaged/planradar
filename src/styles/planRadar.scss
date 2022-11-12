@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  margin: 60px 0px;
+}
+
+.box-content {
+  overflow-y: scroll;
+  border-collapse: collapse;
+  display: block;
+}

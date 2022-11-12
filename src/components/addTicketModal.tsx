@@ -3,8 +3,8 @@ import { Modal, Form, Button } from "react-bootstrap";
 
 interface Props {
   show: boolean;
-  onHide: any;
-  handleSubmit: any;
+  onHide: () => void;
+  handleSubmit: () => void;
 }
 
 const EditTicketModal: React.FC<Props> = (props) => {

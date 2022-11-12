@@ -3,9 +3,15 @@ import { Modal, Form, Button } from "react-bootstrap";
 
 interface Props {
   show: boolean;
-  onHide: any;
-  handleSubmit: any;
-  ticketData: any;
+  onHide: () => void;
+  handleSubmit: () => void;
+  ticketData: {
+    subject: string;
+    priotity: string;
+    status: string;
+    description: string;
+    id: string;
+  };
 }
 
 const EditTicketModal: React.FC<Props> = (props) => {
@@ -28,7 +34,7 @@ const EditTicketModal: React.FC<Props> = (props) => {
   }, [ticketData]);
   const formInputs = ["subject", "priotity", "status", "description"];
 
-  const handleChange = (event) => {
+  const handleChange = (event: { target: { name: string; value: string } }) => {
     var { name, value } = event.target;
     data[name] = value;
     setData({ ...data });

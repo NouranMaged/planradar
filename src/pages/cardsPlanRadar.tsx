@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
-import EditTicketModal from "./editTicketModal.tsx";
-import "./planRadar.scss";
+import EditTicketModal from "../components/editTicketModal.tsx";
+import "../styles/planRadar.scss";
 
 interface Props {
-  rows: any;
-  handleEditTicket: any;
+  rows: object;
+  handleEditTicket: () => void;
 }
 const CardsPlanRadar: React.FC<Props> = (props) => {
   let allRows = props.rows;
@@ -34,14 +34,14 @@ const CardsPlanRadar: React.FC<Props> = (props) => {
     });
   };
   const [modalShow, setModalShow] = useState(false);
-  const handleSubmit = (data: object) => {
+  const handleSubmit = (data) => {
     props.handleEditTicket(data);
     setModalShow(false);
   };
   const generateRows = () => {
     let index = state.scroll.index;
     let end = state.scroll.end;
-    let items: any = [];
+    let items: array = [];
     do {
       if (index >= allRows.length) {
         index = allRows.length;
@@ -96,7 +96,7 @@ const CardsPlanRadar: React.FC<Props> = (props) => {
   };
 
   const tableAttrs = {
-    className: "table-content",
+    className: "box-content",
     style: { height: tableHeight },
     onScroll: onScroll,
   };

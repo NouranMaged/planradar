@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
-import AddTicketModal from "./addTicketModal.tsx";
+import AddTicketModal from "../components/addTicketModal.tsx";
 import CardsPlanRadar from "./cardsPlanRadar.tsx";
-import "./planRadar.scss";
+import "../styles/planRadar.scss";
 
 function PlanRadar(props) {
   const [people, setPeople] = useState(
@@ -46,7 +46,6 @@ function PlanRadar(props) {
         />
       </div>
 
-      {/* <TablePlanRadar rows={people.reverse()} /> */}
       <CardsPlanRadar
         rows={people.reverse()}
         handleEditTicket={handleEditTicket}
