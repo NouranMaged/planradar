@@ -24,7 +24,12 @@ const AddTicketModal: React.FC<Props> = (props) => {
     data[name] = value;
     setData({ ...data });
   };
-
+  const handleAddSubmit = (data) => {
+    //Empty Current Data
+    setData({ subject: "", priority: "", status: "", description: "" });
+    //Submit Data
+    handleSubmit(data);
+  };
   return (
     <Modal
       {...props}
@@ -55,7 +60,7 @@ const AddTicketModal: React.FC<Props> = (props) => {
           })}
 
           <Modal.Footer>
-            <Button onClick={() => handleSubmit(data)}>Submit</Button>
+            <Button onClick={() => handleAddSubmit(data)}>Submit</Button>
           </Modal.Footer>
         </Form>
       </Modal.Body>
