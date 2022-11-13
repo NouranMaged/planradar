@@ -1,4 +1,4 @@
-# PlanRadae Assessment
+# PlanRadar Assessment
 
 This Project is created of Single Page that shows list tickets with following criteria, \
 • handle a large amount of data +10,000, without using any dependencies \
@@ -26,9 +26,9 @@ check src\code structure.txt for file structure
 
 ## Files Components
 
--MainPage /
--TablePage /
--AddModal /
--EditModal /
--Styling folder /
+-MainPage \
+-TablePage \
+-AddModal \
+-EditModal \
+-Styling folder \
 -redux folder
