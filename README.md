@@ -26,9 +26,9 @@ check src\code structure.txt for file structure
 
 ## Files Components
 
--MainPage
--TablePage
--AddModal
--EditModal
--Styling folder
+-MainPage /
+-TablePage /
+-AddModal /
+-EditModal /
+-Styling folder /
 -redux folder
