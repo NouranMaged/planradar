@@ -1,0 +1,1 @@
+export const TICKET_STRUCTURE = "TICKET_STRUCTURE";

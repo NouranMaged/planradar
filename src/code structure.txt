@@ -1,0 +1,17 @@
+.
+├── pages/
+│   ├── mainPage.tsx
+│   ├── ticketsTable.tsx
+├── styles/
+│   └── planRadar.scss
+├── components/
+│   └── addTicketModal.scss
+│   └── editTicketModal.tsx
+├── redux/
+│   └── index.tsx
+│   └── rootReducer.tsx
+│   └── store.tsx
+└── reduxComponents/
+    ├── <hooks.tsx>
+    └── 
+ 
